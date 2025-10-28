@@ -1,0 +1,123 @@
+{
+    "symptoms": {
+        "descriptions": {
+            "A1": "Daun atau tepi daun berwarna abu-abu kecoklatan",
+            "A2": "Daun memiliki bintik coklat berbentuk belah ketupat",
+            "A3": "Daun memiliki bintik coklat sempit dan memanjang",
+            "A4": "Tanaman rebah di awal pertumbuhan",
+            "A5": "Daun berwarna kuning hingga oranye-kuning, terlihat wereng hijau di daun",
+            "A6": "Batang mengering dan di pangkal batang terlihat wereng coklat",
+            "A7": "Pucuk batang padi kering dan mudah dicabut",
+            "A8": "Batang tanaman patah di antara dua ruas",
+            "A9": "Batang tanaman berwarna kuning atau merah kecoklatan dan terdapat tikus hitam",
+            "A10": "Batang padi roboh, terlihat tikus",
+            "A11": "Terdapat bintik hitam pada bulir padi",
+            "A12": "Sisa biji padi rontok, ada burung di sawah",
+            "B1": "Daun kuning kemudian kering",
+            "B2": "Pucuk atau tepi daun berwarna abu-abu kecoklatan kemudian menyebar ke seluruh daun",
+            "B3": "Ada serangga dengan sayap yang tertutup lapisan putih",
+            "B4": "Malai padi busuk atau patah pada fase generatif",
+            "B5": "Malai padi hampa atau bulir padi kosong",
+            "B6": "Biji padi menjadi gelap dan malai membusuk",
+            "B7": "Tanaman busuk dan mati di awal pertumbuhan",
+            "B8": "Bulir padi tidak terisi penuh atau hampa",
+            "B9": "Malai padi berdiri tegak tidak terisi penuh atau hampa",
+            "B10": "Warna bulir padi berubah dan rasanya menjadi tidak enak",
+            "B11": "Ada tanaman yang layu dan mati di awal pertumbuhan",
+            "B12": "Daun tanaman berwarna kuning-oranye",
+            "B13": "Tanaman tidak tumbuh sempurna",
+            "B14": "Tangkai malai tidak berkembang, bulir padi membusuk",
+            "B16": "Tanaman muda mati dan mengering",
+            "B17": "Penggunaan pupuk N berlebihan",
+            "B20": "Terdapat jejak kaki dan lubang tikus di sekitar sawah"
+        },
+        "certainty_factors": {
+            "A1": 0.95,
+            "A2": 0.85,
+            "A3": 0.6,
+            "A4": 0.75,
+            "A5": 0.7,
+            "A6": 0.85,
+            "A7": 0.95,
+            "A8": 0.95,
+            "A9": 0.95,
+            "A10": 0.75,
+            "A11": 0.85,
+            "A12": 0.85,
+            "B1": 0.75,
+            "B2": 0.85,
+            "B3": 0.65,
+            "B4": 0.85,
+            "B5": 0.45,
+            "B6": 0.85,
+            "B7": 0.75,
+            "B8": 0.75,
+            "B9": 0.95,
+            "B10": 0.75,
+            "B11": 0.7,
+            "B12": 0.75,
+            "B13": 0.7,
+            "B14": 0.75,
+            "B16": 0.95,
+            "B17": 0.95,
+            "B20": 0.85
+        }
+    },
+    "diseases": {
+        "P01": "Bacterial leaf blight (Hawar Daun Bakteri)",
+        "P02": "BLAS disease (Penyakit Blas)",
+        "P03": "Narrow brown leaf spot",
+        "P04": "Green leafhopper and tungro (Wereng hijau dan Tungro)",
+        "P05": "Brown planthopper (Wereng Coklat)",
+        "P06": "Rice stem borer (Penggerek Batang Padi)",
+        "P07": "Black rice bug",
+        "P08": "Rice field rat (Tikus Sawah)",
+        "P09": "Stinky rice bug (Walang Sangit)"
+    },
+    "rules": {
+        "P01": {
+            "symptoms": [
+                "A1",
+                "B2",
+                "B8",
+                "B11",
+                "B17"
+            ],
+            "cf_rule": 0.7
+        },
+        "P02": {
+            "symptoms": [
+                "A2",
+                "B4",
+                "B8",
+                "B17"
+            ],
+            "cf_rule": 0.8
+        },
+        "P05": {
+            "symptoms": [
+                "A6",
+                "B1",
+                "B8",
+                "B12"
+            ],
+            "cf_rule": 0.9
+        },
+        "P06": {
+            "symptoms": [
+                "A7",
+                "B8",
+                "B9",
+                "B16"
+            ],
+            "cf_rule": 0.9
+        },
+        "P09": {
+            "symptoms": [
+                "A10",
+                "B10"
+            ],
+            "cf_rule": 0.8
+        }
+    }
+}
