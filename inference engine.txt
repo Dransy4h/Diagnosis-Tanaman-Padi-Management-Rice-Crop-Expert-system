@@ -1,0 +1,25 @@
+SELECT
+    R.disease_id AS rule_id,
+    D.name AS action_type, -- Analogi nama penyakit
+    MIN(SCF.cf_value) AS min_symptom_cf,
+    R.cf_rule AS rule_cf,
+    MIN(SCF.cf_value) * R.cf_rule AS cf_sequential_result -- Hasil Akhir CF
+FROM
+    rules R
+JOIN
+    diseases D ON R.disease_id = D.id
+-- Mencari semua gejala yang disyaratkan oleh aturan
+JOIN
+    rule_symptoms RS ON R.id = RS.rule_id
+JOIN
+    symptom_certainty_factors SCF ON RS.symptom_id = SCF.symptom_id
+WHERE
+    -- KONDISI UTAMA (Filter Awal)
+    RS.symptom_id IN ('A1', 'B2', 'B8', 'B11', 'B17', ...)
+GROUP BY
+    R.id, D.name, R.cf_rule
+HAVING
+    -- KONDISI KRITIS (Memastikan semua gejala aturan TERPILIH)
+    COUNT(RS.symptom_id) = (
+        SELECT COUNT(*) FROM rule_symptoms WHERE rule_id = R.id
+    )
