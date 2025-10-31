@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistem Pakar Padi Lokal (HTML/JS)</title>
+    <title></title>
     <style>
         /* Gaya CSS Transparan */
 
         :root {
-            background-color: black !important;
+            background-color: initial !important;
             background-image: url('https://imgpx.com/en/IzcZFJis6gX6.png');
-            --color-teks: #32CD32;
+            --color-teks: #005a00;
+            font-weight: bold;
             --color-border: rgba(255, 255, 255, 0.3);
-            --color-header: #32CD32;
-            --color: #32CD32 ;       /* sea green lembut */
-            --color-light: #32CD32; /* light green segar */
+            --color-header: #005a00;
+            --color: #005a00 ;       
+            --color-light: #005a00; 
 
         }
 
@@ -27,6 +28,7 @@
         }
 
         header {
+		background-image: url('https://imgpx.com/en/D9eUmblGJhtZ.webp');
             background-color: var(--color-header);
             backdrop-filter: blur(6px);
             color: white;
@@ -315,7 +317,7 @@
 function formatHasil(results) {
     const hasilDiagnosis = document.getElementById('hasil-diagnosis');
     const descriptions = KB.symptoms.descriptions;
-    const solutions = KB.solutions; // <-- Ambil solusi dari KB
+    const solutions = KB.solutions; 
     
     if (results.length === 0) {
         hasilDiagnosis.innerHTML = '<p><strong>Tidak Ada Diagnosis yang Cocok.</strong> Kombinasi gejala tidak memenuhi aturan manapun secara lengkap.</p>';
@@ -326,7 +328,7 @@ function formatHasil(results) {
     
     results.forEach(diag => {
         const confidencePercent = (diag.confidence * 100).toFixed(0);
-        const penanganan = solutions[diag.disease_id] || ["Solusi penanganan tidak tersedia."]; // <-- Ambil solusi
+        const penanganan = solutions[diag.disease_id] || ["Solusi penanganan tidak tersedia."]; 
         
         // 1. Daftar Gejala
         let gejalaHtml = '<ul>';
@@ -337,7 +339,7 @@ function formatHasil(results) {
         gejalaHtml += '</ul>';
 
         // 2. Daftar Solusi
-        let solusiHtml = '<ul style="color: #32CD32; font-weight: bold;">';
+        let solusiHtml = '<ul style="color: ##005a00; font-weight: bold;">';
         penanganan.forEach(sol => {
             solusiHtml += `<li>${sol}</li>`;
         });
@@ -367,4 +369,7 @@ function formatHasil(results) {
 
     </script>
 </body>
+
 </html>
+
+
